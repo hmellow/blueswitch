@@ -60,4 +60,7 @@ while true; do
 		break
 	fi
 done
-echo ***Configuration complete***
+echo ***Device configuration complete***
+echo "\nYou will need to establish an SSH connection between your two devices for this service to work. If this is the FIRST machine that you are 
+running this script on, run the follwing commands, replacing any <> with the appropriate information:\n\n> ssh keygen -t rsa\n>ssh-copy-id 
+<2ndMacUser@second_mac_hostname(or IP)>"
