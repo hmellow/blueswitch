@@ -20,6 +20,8 @@ fi
 read -p "Input your other computer's IP address: " addr
 # Create config file
 echo $addr > $HOME/blueswitch-config.txt
+read -p "Input the username on your other computer: " usr
+sed -i '/^$/i\'"$usr" "$HOME/blueswitch-config.txt"
 
 connected_devices=$(blueutil --connected --format=json | jq -r '.[] | {name: .name, id: .address}')
 # List devices
